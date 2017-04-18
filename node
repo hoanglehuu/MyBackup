@@ -1,0 +1,24 @@
+#!/usr/bin/expect --
+
+set timeout 2
+set machine [lindex $argv 0]
+#set username [lindex $agrc 1]
+#set password [lindex $argv 2]
+spawn ssh -X -Y root@192.168.$machine 
+expect {
+  -re "Are you sure you want to continue connecting (yes/no)?" {
+		exp_send "yes\r"
+		exp_continue
+		#continue to match statements within this expect {}
+	}
+   -re "root@192.168.$machine's password: " {
+		exp_send "clovis\n"
+	}
+   timeout {
+           #send_user "\r\n"
+           stty echo
+        }
+}
+stty echo
+#expect "roo@t192.168.$machine's password: "
+interact
