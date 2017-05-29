@@ -1,0 +1,12 @@
+SEQUENTIAL
+#UAC1@IP1 -> UAC(n-1)@IP1
+6000;192.168.56.1;[authentication username=6000 password=secret];6020;
+6001;192.168.56.1;[authentication username=6001 password=secret];6019;
+6002;192.168.56.1;[authentication username=6002 password=secret];6018;
+6003;192.168.56.1;[authentication username=6003 password=secret];6017;
+6004;192.168.56.1;[authentication username=6004 password=secret];6016;
+6005;192.168.56.1;[authentication username=6005 password=secret];6015;
+6006;192.168.56.1;[authentication username=6006 password=secret];6014;
+6007;192.168.56.1;[authentication username=6007 password=secret];6013;
+6008;192.168.56.1;[authentication username=6008 password=secret];6012;
+6009;192.168.56.1;[authentication username=6009 password=secret];6011;
