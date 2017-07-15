@@ -29,11 +29,12 @@ class clTelnetConnect(threading.Thread):
 
     def run_cmd(self, cmd):
         try:
-            self.tn.write('%s\r\n', cmd)
-            #self.tn.read_until(PROMPT)
+            self.tn.write('%s\r\n'%cmd)
+            self.tn.read_until(PROMPT)
             print self.tn.read_very_lazy()
             return 0
-        except:
+        except Exception as ex:
+            print ex
             return -1
         return 0
 
