@@ -1,9 +1,8 @@
-
-
-
 import telnetlib
 import threading
 import time, os, sys
+
+#Author: hoanglehuu@gmail.com
 
 PROMPT = ':~$'
 
@@ -30,8 +29,8 @@ class clTelnetConnect(threading.Thread):
     def run_cmd(self, cmd):
         try:
             self.tn.write('%s\r\n'%cmd)
-            self.tn.read_until(PROMPT)
-            print self.tn.read_very_lazy()
+            print self.tn.read_until(PROMPT)
+            #print self.tn.read_very_lazy()
             return 0
         except Exception as ex:
             print ex
@@ -44,7 +43,7 @@ class clTelnetConnect(threading.Thread):
             self.f = self.login()
       
         for i in range(0, self.num_of_cmds):
-            print "[%s] Run cmd [%d]!!!"%(self.getName(), i)
+            print "[%s] Run cmd [%d]!!!\r\n"%(self.getName(), i)
             loop = 0
             ret = self.run_cmd('ls -l /tmp')
             while (loop < 10 and ret == -1):
